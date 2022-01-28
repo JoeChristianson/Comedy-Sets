@@ -1,24 +1,24 @@
-var setString = "";
-var setArray = [];
-var jokeNumber = 0;
-var guessArray = [];
-var allLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-var nextLetter = "A";
-var correctStreak = 0;
-var colorArray = ["blue","red","orange","pink","yellow","cyan","green","purple","magenta"]
+let setString = localStorage.getItem("set");
+
+let setArray = [];
+let jokeNumber = 0;
+let guessArray = [];
+const allLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+let nextLetter = "A";
+let correctStreak = 0;
+let colorArray = ["blue","red","orange","pink","yellow","cyan","green","purple","magenta"]
+make();
 
 function guess(x){
     var guessed = guessArray[x];
     if (guessed == nextLetter){
         correctStreak++;
-        document.getElementById("streak").innerHTML = correctStreak;
         nextJoke();
     }
     else{
 
         correctStreak = 0;
         alert("The next joke was " + setArray[jokeNumber +1]);
-        document.getElementById("streak").innerHTML = correctStreak; 
             for (let index = 0; index < 4; index++) {
                 previousJoke();
                 
@@ -27,9 +27,6 @@ function guess(x){
     }
 
 }
-
-
-
 
 function nextJoke(){
     if (jokeNumber<(setArray.length-1)){
@@ -57,10 +54,8 @@ function previousJoke(){
 
 function setList(){
     setString = document.getElementById("set-list").value;
-    setArray = setString.split(",");
-    document.getElementById("joke").textContent = setArray[0];
-    document.getElementById("set-list").value = "";
-    assignButtons();
+    localStorage.setItem("set",setString);
+    make();
 }
 
 function assignButtons(){
@@ -132,3 +127,9 @@ function assignButtonColors(){
 
 }
 
+function make(){
+    setArray = setString.split(",");
+    document.getElementById("joke").textContent = setArray[0];
+    document.getElementById("set-list").value = "";
+    assignButtons();
+}

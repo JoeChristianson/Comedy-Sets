@@ -1,27 +1,39 @@
-#main {
+body {
     text-align: center;
+    height: 100vh;
 }
-
 
 #joke {
 
-    font-size: xx-large;
+    font-size: 5vh;
     min-width: 100px;
-    padding: 70px;
+    padding: 20px;
+    ;
 }
 
-button {
-margin-bottom: 5px;
+.button {
+background-color: thistle;
+margin: 3px;
+display: flex;
+justify-content: center;
+align-items: center;
+border: black 3px solid;
+font-size: 40px;
 }
 
 .button-container {
-    width:50%;
+    width: 1000px;
+    max-width:90%;
+    height: 60vh;
     margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
-.button-container > button {
-    color: black;
-    width: 30%;
-    height: 150px;
-    font-size: xx-large;
 
+
+form {
+    margin: 10px;
+}
+input {
+    margin: 10px;
 }
