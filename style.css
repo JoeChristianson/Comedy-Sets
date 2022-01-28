@@ -1,0 +1,27 @@
+#main {
+    text-align: center;
+}
+
+
+#joke {
+
+    font-size: xx-large;
+    min-width: 100px;
+    padding: 70px;
+}
+
+button {
+margin-bottom: 5px;
+}
+
+.button-container {
+    width:50%;
+    margin: auto;
+}
+.button-container > button {
+    color: black;
+    width: 30%;
+    height: 150px;
+    font-size: xx-large;
+
+}
